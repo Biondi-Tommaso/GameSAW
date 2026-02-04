@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menu Modalità di Gioco</title>
+    <link rel="stylesheet" href="css/mode.css">
+    <link rel="icon" href="assets/uploads/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+      
+    <header>
+        <h1>Scegli la Modalità di Gioco</h1>
+        <p>Esplora le diverse modalità di gioco disponibili e scegli quella che preferisci!</p>
+    </header>
+
+    <div class="container">
+        <div class="game-mode">
+            <img src="img/singlePlayer.png" alt="Icona Modalità 1">
+            <h2>vs Bot</h2>
+            <p>Gioca contro l'intelligenza artificiale.</p>
+            <a class="link-button" href="api/smistatore.php?mode=bot">Scegli</a>
+        </div>
+
+        <div class="game-mode">
+            <img class="img-local-1" src="https://minigamehub.altervista.org/img/singlePlayer.png" alt="Icona Modalità 1">
+            <img class="img-local-2" src="img/singlePlayer.png" alt="Icona Modalità 1">
+            <h2 class="shift-up">Local Multiplayer</h2>
+            <p class="shift-up">Sfida i tuoi amici sullo stesso dispositivo.</p>
+            <a class="link-button shift-up" href="api/smistatore.php?mode=local">Scegli</a>
+        </div>
+
+        <div class="game-mode">
+            <img class="img-online-1" src="img/singlePlayer.png" alt="Icona Modalità 1">
+            <div class="dash"></div>
+            <img class="img-online-2" src="img/singlePlayer.png" alt="Icona Modalità 1">
+            <h2 class="shift-up-online">Online Multiplayer</h2>
+            <p class="shift-up-online">Sfida i tuoi amici anche a distanza!</p>
+            <a class="link-button shift-up-online" href="api/smistatore.php?mode=online">Scegli</a>
+        </div>
+    </div>
+
+  <a href="index.php" class="back-btn-real">
+            <span>&#8592;</span> Home
+        </a>
+</body>
+</html>

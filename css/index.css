@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', 'Arial Black', sans-serif;
+    background-color: #111;
+    touch-action: none;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+}
+
+#slide1 {
+    background: radial-gradient(circle at center, #f39c12 0%, #d35400 100%);
+}
+
+#slide2 {
+    background: radial-gradient(circle at center, #e74c3c 0%, #c0392b 100%);
+}
+
+#slide3 {
+    background: radial-gradient(circle at center, #9b59b6 0%, #8e44ad 100%);
+}
+
+#slide4 {
+    background: radial-gradient(circle at center, #54adb7 0%, #3d858e 100%);
+}
+
+.slide h1,
+.slide h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+    line-height: 0.9;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slide p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.leaderboard-table td {
+    padding: 15px;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-table tr:first-child td {
+    color: #f1c40f;
+    font-weight: bold;
+    background: rgba(241, 196, 15, 0.1);
+}
+
+.button {
+    display: inline-block;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    color: #111;
+    background: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+.auth-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1001;
+    transition: background 0.3s;
+}
+
+.auth-btn:hover {
+    background: #fff;
+    color: #111;
+}
+
+.down-arrow {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    z-index: 1000;
+    animation: bounce 2s infinite;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+.about-content {
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.links-construction a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.links-construction a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+
+    .slide h1,
+    .slide h2 {
+        font-size: 5rem;
+    }
+
+    .leaderboard-wrapper {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+
+    .slide h1,
+    .slide h2 {
+        font-size: 2rem;
+        margin-top: 50px;
+    }
+
+    .slide p {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    .leaderboard-wrapper {
+        max-height: 45vh;
+    }
+}

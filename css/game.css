@@ -1,0 +1,109 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #cecece;
+    text-align: center;
+}
+
+.game-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2vmin;
+}
+
+#status {
+    font-size: clamp(1.5rem, 8vmin, 4rem); 
+    font-weight: 900;
+    margin-bottom: 2vh;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.board-wrapper {
+    background-color: #0066ff;
+    padding: 1.5vmin;
+    border-radius: 3vmin;
+    border: 3px solid black;
+    box-shadow: 0 10px 0px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(7, 10vmin); 
+    grid-template-rows: repeat(6, 10vmin); 
+    gap: 1.2vmin;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid black;
+    box-sizing: border-box;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.cell:hover {
+    background-color: #ffffff;
+    transform: scale(1.02);
+}
+
+/* GIOCATORI */
+.cell.player1 {
+    background-color: #ff0000; /* Rosso */
+    background-image: radial-gradient(circle at 30% 30%, #ff5555, #880000);
+}
+
+.cell.player2 {
+    background-color: #ffaa00; /* Giallo/Arancio */
+    background-image: radial-gradient(circle at 30% 30%, #ffcc00, #aa7700);
+}
+
+/* AREA BOTTONI */
+.button-container {
+    margin-top: 3vh;
+}
+
+.button {
+    padding: 1.5vh 6vw;
+    font-size: clamp(1rem, 3vmin, 1.5rem);
+    color: white;
+    background-color: #0066ff;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #0044bb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0px black;
+}
+
+.button:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 500px) {
+    #game-board {
+        grid-template-columns: repeat(7, 12vmin);
+        grid-template-rows: repeat(6, 12vmin);
+    }
+}

@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    min-height: 100%;
+    margin: 0;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verify-container {
+    max-width: 550px;
+    width: 100%;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.verify-container h2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin: 0 0 25px 0;
+    font-weight: 700;
+}
+
+.verify-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    font-size: 64px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    animation: iconPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes iconPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.verify-icon.success {
+    color: white;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    box-shadow: 0 8px 20px rgba(72, 187, 120, 0.4);
+}
+
+.verify-icon.error {
+    color: white;
+    background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+    box-shadow: 0 8px 20px rgba(252, 129, 129, 0.4);
+}
+
+.message {
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin: 25px 0 30px;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #f0fff4;
+    color: #2f855a;
+    border-left: 4px solid #48bb78;
+}
+
+.message.error {
+    background: #fff5f5;
+    color: #c53030;
+    border-left: 4px solid #fc8181;
+}
+
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 85, 104, 0.5);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+
+    .verify-container {
+        padding: 35px 25px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .verify-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .verify-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .message {
+        padding: 16px 20px;
+        font-size: 0.95rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 360px) {
+    .verify-container {
+        padding: 30px 20px;
+    }
+
+    .verify-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 42px;
+    }
+
+    .message {
+        padding: 14px 18px;
+        font-size: 0.9rem;
+    }
+}
